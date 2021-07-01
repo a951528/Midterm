@@ -10,7 +10,8 @@ class TownSquare : Room("Town Square"){
     override val dangerlevel = super.dangerlevel - 3
     private var bellsound = "GWONG!"
 
-    override fun load() = "你來到了小鎮的廣場!"
+    final override fun load() = "你來到了小鎮的廣場!"
+    //禁止繼承TownSquare的class修改這句歡迎詞
 
     private fun ringBell() = "歡迎的鐘聲響起! $bellsound"
 
