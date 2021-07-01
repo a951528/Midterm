@@ -41,7 +41,13 @@ private fun printPlayerStatus(
     println(statusFormatString)
 }
 
-private fun drunkenness(x: Int) {
+object Game{
+    init{
+        println("你好，冒險者")
+    }
+}
+
+/*private fun drunkenness(x: Int) {
     val s = when (x) {
         in 41..50 -> "爛醉如泥"
         in 31..40 -> "大醉stewed"
@@ -52,5 +58,5 @@ private fun drunkenness(x: Int) {
         else -> "超出範圍"
     }
     println("醉酒程度：$s")
-}
+}*/
 
