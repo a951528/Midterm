@@ -11,7 +11,11 @@ fun main() {
     println( player.name + " TheBrave")
     player.castFireBall()
 
-    var currentRoom = Room("Foyer")
+    /*var currentRoom = Room("Foyer")
+    println( currentRoom.description())
+    println( currentRoom.load())*/
+
+    var currentRoom = TownSquare()
     println( currentRoom.description())
     println( currentRoom.load())
 

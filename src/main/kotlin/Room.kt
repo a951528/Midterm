@@ -8,7 +8,10 @@ open class Room(val name:String) {
 
 class TownSquare : Room("Town Square"){
     override val dangerlevel = super.dangerlevel - 3
+    private var bellsound = "GWONG!"
 
     override fun load() = "你來到了小鎮的廣場!"
+
+    private fun ringBell() = "歡迎的鐘聲響起! $bellsound"
 
 }
