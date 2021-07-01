@@ -46,7 +46,8 @@ object Game{
             //printPlayerStatus(player)
 
             print(">Enter your command: ")
-            println("Last command: ${readLine()}")
+            //println("Last command: ${readLine()}")
+            println( GameInput(readLine()).processCommand() )
 
         }
     }
@@ -69,6 +70,12 @@ object Game{
         private val input = arg ?: ""
         val command = input.split(" ")[0]
         val argument = input.split(" ").getOrElse(1, { "" })
+
+        fun processCommand() = when(command.toLowerCase()){
+            else -> commandNotFound()
+        }
+
+        private fun commandNotFound() = "不確定您要做什麼"
     }
 
 }
