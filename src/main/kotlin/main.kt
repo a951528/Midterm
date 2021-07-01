@@ -6,45 +6,65 @@ import java.lang.Math.random
 
 fun main() {
 
-    //val player = Player("Madrigal",89,true,false)
-    val player = Player("Madrigal")
-    println( player.name + " TheBrave")
-    player.castFireBall()
+
 
     /*var currentRoom = Room("Foyer")
     println( currentRoom.description())
     println( currentRoom.load())*/
 
-    var currentRoom = TownSquare()
-    println( currentRoom.description())
-    println( currentRoom.load())
 
-    println( player.auraColor() )
+
+
+    //println( player.auraColor() )
     //printPlayerStatus(healthPoints, karma, auraColor, isBlessed, player.name, healthStatus)
-    println(player.formaHealthStatus())
+
+
+    Game.play()
 
     //castFireBall(12)
     //drunkenness(x=castFireBall(50))
 }
 
-private fun printPlayerStatus(
-    healthPoints: Int,
-    karma: Int,
-    auraColor: String,
-    isBlessed: Boolean,
-    name: String,
-    healthStatus: String
-) {
-    val statusFormatString =
-        "(健康指數: $healthPoints)(karma: $karma ，光環: $auraColor) (運勢: ${if (isBlessed) "走運" else "很背"}) -> $name $healthStatus"
 
-    println(statusFormatString)
-}
 
 object Game{
+    //val player = Player("Madrigal",89,true,false)
+    val player = Player("Madrigal")
+    //println( player.name + " TheBrave") //出錯?
+    private  var currentRoom : Room = TownSquare() //?
+
     init{
         println("你好，冒險者")
+        player.castFireBall()
     }
+
+    fun play(){
+        while(true){
+            println( currentRoom.description())
+            println( currentRoom.load())
+            println(player.formaHealthStatus())
+            //printPlayerStatus(player)
+
+            print(">Enter your command: ")
+            println("Last command: ${readLine()}")
+
+        }
+    }
+
+    private fun printPlayerStatus(
+        healthPoints: Int,
+        karma: Int,
+        auraColor: String,
+        isBlessed: Boolean,
+        name: String,
+        healthStatus: String
+    ) {
+        val statusFormatString =
+            "(健康指數: $healthPoints)(karma: $karma ，光環: $auraColor) (運勢: ${if (isBlessed) "走運" else "很背"}) -> $name $healthStatus"
+
+        println(statusFormatString)
+    }
+
 }
 
 /*private fun drunkenness(x: Int) {
